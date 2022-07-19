@@ -24,8 +24,9 @@ namespace react.Controllers
             {
                 if (student.Type == "Add")
                 {
+                    var id= _dbContext.student.Select(k => k.Id).Max()+1;
                     Student_Entity students = new();
-                    students.Id = student.Id;
+                    students.Id =id;
                     students.FirstName = student.FirstName;
                     students.LastName = student.LastName;
                     students.Email = student.Email;
